@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ENAGRAM Text Compare</title>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="sidebar">
+
+        <div class="sidebar-header">
+            <img src="./BurgerIcon.png" alt="Menu" class="burger" onclick="toggleMenu()">
+            <div class="logo">
+                <img src="./EnagramLogo.png" alt="EnagramLogo" class="logo-img">
+                <span>ENAGRAM</span>
+            </div>
+        </div>
+
+        <ul class="menu">
+            <li class="active" onclick="compareTexts()">ტექსტის შედარება</li>
+            <li onclick="startVoiceToText()">ხმა → ტექსტი</li>
+            <li onclick="textToVoice()">ტექსტი → ხმა</li>
+            <li onclick="convertToPDF()">PDF კონვერტაცია</li>
+        </ul>
+
+        <div class="user">თამარ ინანაძე</div>
+
+    </div>
+
+    <div class="main">
+
+        <div class="topbar">
+            <select id="languageSelect" onchange="changeLanguage()">
+                <option value="ka-GE">ქართული</option>
+            </select>
+
+            <label>
+                <input type="checkbox"> ფორმატის შენარჩუნება
+            </label>
+
+            <button class="add-btn" onclick="resetTexts()">+ ახლის გახსნა</button>
+        </div>
+
+        <div class="text-area">
+            <textarea id="textA" placeholder="დაწერე ტექსტი..."></textarea>
+            <div class="arrow" onclick="swapTextAreas()">↔</div>
+            <textarea id="textB" placeholder="დაწერე ტექსტი..."></textarea>
+        </div>
+
+        <button id="compareBtn" class="compare-btn" onclick="compareTexts()">შედარება</button>
+
+        <div id="result"></div>
+
+    </div>
+
+</div>
+
+<script src="./script.js"></script>
+</body>
+</html>
